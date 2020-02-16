@@ -7,12 +7,22 @@
   border-bottom: 1px solid #9a9a9a9a;
 }
 
+.fixed {
+  position: sticky;
+  /*left: 0;
+  right: 0;*/
+  top: 0px;
+}
+
+.animateIn {
+  transform: translateY(0);
+}
+
 .link {
   text-decoration: none;
   color: #171219;
 }
 
 .link:hover {
-  color: #0400cad4;
-  font-weight: 600;
+  color: #2c2c91;
 }

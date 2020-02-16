@@ -1,13 +1,24 @@
-import TEST_ACTION from "./actions";
+import { SET_SCROLL_DIRECTION } from "./actions";
 
 const initialState = {
-  test: "hi"
+  scrollDirection: "up",
+  prevOffset: 0
 };
 
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
-    case TEST_ACTION:
-      return Object.assign({}, state, { test: "working" });
+    case SET_SCROLL_DIRECTION:
+      if (action.currOffset > state.prevOffset) {
+        return Object.assign({}, state, {
+          scrollDirection: "down",
+          prevOffset: action.currOffset
+        });
+      } else {
+        return Object.assign({}, state, {
+          scrollDirection: "up",
+          prevOffset: action.currOffset
+        });
+      }
     default:
       return state;
   }

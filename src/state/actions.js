@@ -1,7 +1,8 @@
-const TEST_ACTION = "TEST_ACTION";
+export const SET_SCROLL_DIRECTION = "SET_SCROLL_DIRECTION";
 
-export default function testAction() {
+export function setScrollDirection(currOffset) {
   return {
-    type: TEST_ACTION
+    type: SET_SCROLL_DIRECTION,
+    currOffset: currOffset
   };
 }
