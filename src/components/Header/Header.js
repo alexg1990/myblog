@@ -34,8 +34,10 @@ class Header extends React.Component {
     const pageTitle = document.title;
     return (
       <nav
+        id="nav"
         className={
-          "container" + (this.props.prevOffset > 70 ? " fixed animateIn" : "")
+          "container" +
+          (this.props.prevOffset > 70 ? " fixed animateIn" : " animateOut")
         }
       >
         {this.props.scrollDirection === "up" ? Links : pageTitle}

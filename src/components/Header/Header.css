@@ -8,14 +8,36 @@
 }
 
 .fixed {
-  position: sticky;
-  /*left: 0;
-  right: 0;*/
+  position: fixed;
+  left: 0;
+  right: 0;
   top: 0px;
 }
 
+@keyframes animateIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animateOut {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 .animateIn {
-  transform: translateY(0);
+  animation: animateIn 0.4s ease-in;
+}
+
+.animateOut {
+  animation: animateOut 0.4s ease-out forwards;
 }
 
 .link {
