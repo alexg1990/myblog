@@ -7,6 +7,12 @@ import { setScrollDirection } from "../../state/actions";
 import "./Header.css";
 
 class Header extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      shouldAnimate: false
+    };
+  }
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
   }
@@ -15,6 +21,9 @@ class Header extends React.Component {
   }
   handleScroll = () => {
     this.props.dispatch(setScrollDirection(document.documentElement.scrollTop));
+    !this.state.shouldAnimate &&
+      document.documentElement.scrollTop > 70 &&
+      this.setState({ shouldAnimate: true });
   };
   render() {
     const Links = [
@@ -37,7 +46,11 @@ class Header extends React.Component {
         id="nav"
         className={
           "container" +
-          (this.props.prevOffset > 70 ? " fixed animateIn" : " animateOut")
+          (this.props.prevOffset > 70
+            ? " fixed animateIn"
+            : this.state.shouldAnimate
+            ? " animateOut"
+            : "")
         }
       >
         {this.props.scrollDirection === "up" ? Links : pageTitle}
