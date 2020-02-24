@@ -14,9 +14,9 @@ function App() {
     <Provider store={store}>
       <Router>
         <Header />
-        <div style={{ marginBottom: "30px" }} />
+        <div style={{ marginBottom: "80px" }} />
         <Routes />
-        <div style={{ height: "4000px", background: "red" }}></div>
+        <div style={{ height: "4000px", background: "white" }}></div>
       </Router>
     </Provider>
   );

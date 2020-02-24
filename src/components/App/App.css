@@ -3,6 +3,9 @@
   padding: 0;
 }
 
+body {
+  font-family: "Noto Sans SC";
+}
 h1 {
   font-size: 40px;
   font-weight: 600;
