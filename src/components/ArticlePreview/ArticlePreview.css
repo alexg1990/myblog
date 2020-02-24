@@ -1,0 +1,14 @@
+.ArticlePreview {
+    display: none;
+}
+
+
+
+.container {
+    display: flex;
+    height: auto;
+}
+
+.flexRow {
+    flex-direction: column;
+}

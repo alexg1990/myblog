@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 
 import GeneralContent from "../GeneralContent/GeneralContent";
@@ -6,7 +7,7 @@ import JavascriptContent from "../JavascriptContent/JavascriptContent";
 import ReactContent from "../ReactContent/ReactContent";
 import TypescriptContent from "../TypescriptContent/TypescriptContent";
 
-export default function Routes() {
+const Routes = function() {
   return (
     <div>
       <Switch>
@@ -25,4 +26,12 @@ export default function Routes() {
       </Switch>
     </div>
   );
-}
+};
+
+const mapStateToProps = state => {
+  return {
+    prevOffset: state.prevOffset
+  };
+};
+
+export default connect(mapStateToProps)(Routes);
