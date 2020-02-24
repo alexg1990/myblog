@@ -1,3 +1,16 @@
-.App {
-  background: #fffcf2;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans SC";
+}
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 13px;
 }
