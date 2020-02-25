@@ -1,13 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ArticlePreview from "../ArticlePreview/ArticlePreview.js";
 
+import "./ContentOverview.css";
+
 const ContentOverview = function(props) {
+  const [masterTitle, setMasterTitle] = useState("|");
   useEffect(() => {
-    // document.title = "Alex's Blog";
     document.title = props.pageTitle;
-  }, [props.pageTitle]);
+    setTimeout(() => animateMasterTitle(props.masterTitle), 1200);
+  }, [props.pageTitle, props.masterTitle]);
+  function animateMasterTitle(title) {
+    for (let i = 0; i < title.length; i++) {
+      setTimeout(
+        () =>
+          setMasterTitle(
+            title.substr(0, i + 1) + (i < title.length - 1 ? "|" : "")
+          ),
+        i * 100
+      );
+    }
+  }
   return (
     <div>
+      <div className="masterTitleContainer">
+        <h1 className="masterTitle">{masterTitle}</h1>
+      </div>
       <ArticlePreview
         title={props.exampleTitle}
         description={props.exampleDescription}
@@ -16,4 +33,7 @@ const ContentOverview = function(props) {
   );
 };
 
+ContentOverview.defaultProps = {
+  masterTitle: "Welcome to my Blog!"
+};
 export default ContentOverview;
