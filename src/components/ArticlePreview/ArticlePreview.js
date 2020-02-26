@@ -10,7 +10,9 @@ const ArticlePreview = function(props) {
         <img className="keyArticleImage" src={MockImage} alt="keyImage"></img>
       </div>
       <div className="keyArticleInfo">
-        <h1>{props.title}</h1>
+        <a href="#">
+          <h1>{props.title}</h1>
+        </a>
         <p>{props.description}</p>
       </div>
     </div>

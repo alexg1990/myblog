@@ -27,18 +27,10 @@ class Header extends React.Component {
   };
   render() {
     const Links = [
-      <Link className="link" to="/">
-        General
-      </Link>,
-      <Link className="link" to="/javascript">
-        Javascript
-      </Link>,
-      <Link className="link" to="/react">
-        React
-      </Link>,
-      <Link className="link" to="/typescript">
-        Typescript
-      </Link>
+      <Link to="/">General</Link>,
+      <Link to="/javascript">Javascript</Link>,
+      <Link to="/react">React</Link>,
+      <Link to="/typescript">Typescript</Link>
     ];
     const pageTitle = document.title;
     return (

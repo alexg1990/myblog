@@ -12,7 +12,7 @@ const Routes = function(props) {
   return (
     <div
       style={
-        props.prevOffset < 70
+        props.prevOffset <= 70
           ? { marginTop: "80px" }
           : { marginTop: "" + (80 + headerHeight) + "px" }
       }

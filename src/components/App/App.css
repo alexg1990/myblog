@@ -1,11 +1,14 @@
 * {
   margin: 0;
   padding: 0;
+  color: #171219;
+  text-decoration: none;
 }
 
 body {
-  font-family: "Noto Sans SC";
+  font-family: "Noto Sans SC", "Arial";
 }
+
 h1 {
   font-size: 40px;
   font-weight: 600;
@@ -13,4 +16,14 @@ h1 {
 
 p {
   font-size: 13px;
+}
+
+a:hover {
+  color: #2c2c91;
+  cursor: pointer;
+}
+
+a>*:hover {
+  color: #2c2c91;
+  cursor: pointer;
 }
