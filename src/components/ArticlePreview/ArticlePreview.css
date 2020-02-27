@@ -1,6 +1,6 @@
 .articleContainer {
   display: flex;
-  padding: 0px 100px;
+  padding: 0% 10%;
 }
 
 .keyArticleImageContainer {
@@ -25,6 +25,7 @@
   .articleContainer {
     flex-direction: column;
   }
+
   .keyArticleInfo {
     padding: 40px 0px 0px 0px;
   }
