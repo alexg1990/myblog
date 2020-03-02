@@ -1,16 +1,23 @@
 .articlePreviewContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin: -20px -5px calc(80px - 20px) -5px;
+}
+.articlePreviewContainer > * {
+  padding: 20px 5px;
 }
 
 .articleImage {
-    max-width: 100%;
-    object-fit: contain;
-    margin-top: 30px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 3px;
 }
 
 @media screen and (max-width: 768px) {
-    .articlePreviewContainer {
-        flex-direction: column-reverse;
-    }
+  .articlePreviewContainer {
+    margin: -15px 0px calc(80px - 15px) 0px;
+  }
+  .articlePreviewContainer > * {
+    padding: 15px 0px;
+  }
 }
