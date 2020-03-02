@@ -7,3 +7,18 @@
 .masterTitle {
   text-align: center;
 }
+
+.articlePreviewFlexContainer {
+  display: flex;
+  margin: 0 -20px;
+}
+
+.articlePreviewFlexContainer>* {
+  padding: 0px 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .articlePreviewFlexContainer {
+    flex-direction: column;
+  }
+}

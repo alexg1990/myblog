@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./KeyArticlePreview.css";
-import MockImage from "../../assets/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg";
+import MockImage from "../../../assets/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg";
 
 const KeyArticlePreview = function(props) {
   return (

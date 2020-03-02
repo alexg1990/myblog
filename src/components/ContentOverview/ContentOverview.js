@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import KeyArticlePreview from "../KeyArticlePreview/KeyArticlePreview.js";
-import ArticlePreview from "../ArticlePreview/ArticlePreview.js";
+import KeyArticlePreview from "../Articles/KeyArticlePreview/KeyArticlePreview.js";
+import ArticlePreview from "../Articles/ArticlePreview/ArticlePreview.js";
 
 import "./ContentOverview.css";
 
@@ -24,19 +24,24 @@ const ContentOverview = function(props) {
   }
   return (
     <div>
-      <div className="masterTitleContainer">
-        <h1 className="masterTitle">
-          {masterTitle}
-          {masterTitle.length !== props.masterTitle.length && (
-            <span style={{ fontWeight: 400 }}>|</span>
-          )}
-        </h1>
+      <div style={{ padding: "0% 10%" }}>
+        <div className="masterTitleContainer">
+          <h1 className="masterTitle">
+            {masterTitle}
+            {masterTitle.length !== props.masterTitle.length && (
+              <span style={{ fontWeight: 400 }}>|</span>
+            )}
+          </h1>
+        </div>
+        <KeyArticlePreview
+          title={props.exampleTitle}
+          description={props.exampleDescription}
+        />
+        <div className="articlePreviewFlexContainer">
+          <ArticlePreview />
+          <ArticlePreview />
+        </div>
       </div>
-      <KeyArticlePreview
-        title={props.exampleTitle}
-        description={props.exampleDescription}
-      />
-      <ArticlePreview />
     </div>
   );
 };
