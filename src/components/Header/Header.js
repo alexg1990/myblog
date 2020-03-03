@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { setScrollDirection } from "../../state/actions";
 
 import "./Header.css";
+import logo from "../../assets/boldd.svg";
 
 class Header extends React.Component {
   constructor() {
@@ -25,6 +26,15 @@ class Header extends React.Component {
       document.documentElement.scrollTop > 70 &&
       this.setState({ shouldAnimate: true });
   };
+  handleAnimation = () => {
+    if (this.props.prevOffset > 70) {
+      return " fixed animateIn";
+    } else if (this.state.shouldAnimate) {
+      return " animateOut";
+    } else {
+      return "";
+    }
+  };
   render() {
     const Links = [
       <Link to="/">General</Link>,
@@ -34,19 +44,10 @@ class Header extends React.Component {
     ];
     const pageTitle = document.title;
     return (
-      <nav
-        id="nav"
-        className={
-          "container" +
-          (this.props.prevOffset > 70
-            ? " fixed animateIn"
-            : this.state.shouldAnimate
-            ? " animateOut"
-            : "")
-        }
-      >
-        {this.props.scrollDirection === "up" ? Links : pageTitle}
-      </nav>
+      <header className={"container" + this.handleAnimation()}>
+        <img src={logo} />
+        <nav>{this.props.scrollDirection === "up" ? Links : pageTitle}</nav>
+      </header>
     );
   }
 }
