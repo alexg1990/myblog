@@ -11,7 +11,7 @@ const ArticlePreview = function(props) {
         <p>{props.description}</p>
       </div>
       <div>
-        <img className="articleImage" src={MockImage}></img>
+        <img className="articleImage" src={MockImage} alt=""></img>
       </div>
     </div>
   );

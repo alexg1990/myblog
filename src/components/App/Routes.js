@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 
@@ -9,12 +9,13 @@ const Routes = function(props) {
   let headerHeight =
     document.getElementsByTagName("header")[0] &&
     document.getElementsByTagName("header")[0].clientHeight;
+  let headerDist = 70;
   return (
     <div
       style={
         props.prevOffset <= 70
-          ? { marginTop: "80px" }
-          : { marginTop: "" + (80 + headerHeight) + "px" }
+          ? { marginTop: headerDist }
+          : { marginTop: "" + (headerDist + headerHeight) + "px" }
       }
     >
       <Switch>

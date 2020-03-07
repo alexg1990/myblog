@@ -11,12 +11,12 @@ const ContentOverview = function(props) {
     setMasterTitle("");
     setTimeout(() => animateMasterTitle(props.masterTitle), 1200);
     return function cleanup() {
-      let highestTimeoutId = setTimeout(";");
+      let highestTimeoutId = setTimeout(() => ";");
       for (let i = 0; i < highestTimeoutId; i++) {
         clearTimeout(i);
       }
     };
-  }, [props.pageTitle]);
+  }, [props.pageTitle, props.masterTitle]);
   function animateMasterTitle(title) {
     for (let i = 0; i < title.length; i++) {
       setTimeout(() => setMasterTitle(title.substr(0, i + 1)), i * 100);

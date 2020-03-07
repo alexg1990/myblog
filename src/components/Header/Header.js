@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import Button from "@material-ui/core/Button";
 
 import { setScrollDirection } from "../../state/actions";
 
@@ -37,16 +38,26 @@ class Header extends React.Component {
   };
   render() {
     const Links = [
-      <Link to="/">General</Link>,
+      <Link to="/" id="logo">
+        <img src={logo} alt="logo" />
+      </Link>,
       <Link to="/javascript">Javascript</Link>,
       <Link to="/react">React</Link>,
-      <Link to="/typescript">Typescript</Link>
+      <Link to="/typescript">Typescript</Link>,
+      <Button variant="contained" id="login">
+        Login
+      </Button>
     ];
     const pageTitle = document.title;
     return (
       <header className={"container" + this.handleAnimation()}>
-        <img src={logo} />
-        <nav>{this.props.scrollDirection === "up" ? Links : pageTitle}</nav>
+        {this.props.scrollDirection === "up" ? (
+          <nav className="container">{Links}</nav>
+        ) : (
+          <nav className="container" style={{ justifyContent: "center" }}>
+            {pageTitle}
+          </nav>
+        )}
       </header>
     );
   }
