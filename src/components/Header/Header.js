@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 import { setScrollDirection } from "../../state/actions";
+import isMobile from "../../helpers/isMobile.js";
 
 import "./Header.css";
 import logo from "../../assets/boldd.svg";
@@ -38,26 +41,35 @@ class Header extends React.Component {
   };
   render() {
     const Links = [
-      <Link to="/" id="logo">
-        <img src={logo} alt="logo" />
-      </Link>,
+      // <Link to="/" id="logo">
+      //   <img src={logo} alt="logo" />
+      // </Link>,
       <Link to="/javascript">Javascript</Link>,
       <Link to="/react">React</Link>,
-      <Link to="/typescript">Typescript</Link>,
-      <Button variant="contained" id="login">
-        Login
-      </Button>
+      <Link to="/typescript">Typescript</Link>
+      // <Button variant="contained" id="login">
+      //   Login
+      // </Button>
     ];
     const pageTitle = document.title;
     return (
       <header className={"container" + this.handleAnimation()}>
-        {this.props.scrollDirection === "up" ? (
-          <nav className="container">{Links}</nav>
-        ) : (
-          <nav className="container" style={{ justifyContent: "center" }}>
-            {pageTitle}
-          </nav>
-        )}
+        <nav className="container">
+          <Link to="/" id="logo">
+            <img src={logo} alt="logo" />
+          </Link>
+          {isMobile() ? (
+            <FontAwesomeIcon icon={faChevronUp} />
+          ) : this.props.scrollDirection === "up" ? (
+            Links
+          ) : (
+            pageTitle
+          )}
+
+          <Button variant="contained" id="login">
+            Login
+          </Button>
+        </nav>
       </header>
     );
   }
