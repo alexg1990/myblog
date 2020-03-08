@@ -80,3 +80,19 @@ nav {
 #login > * {
   color: white;
 }
+
+@keyframes animateSubLinksIn {
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animateSubLinksIn {
+  animation: animateSubLinksIn 0.5s ease-out;
+}

@@ -68,7 +68,12 @@ const Header = props => {
         <LoginButton />
       </nav>
       {showSubLinks && (
-        <nav className="navContainer" id="subLinks">
+        <nav
+          className={
+            "navContainer" + (showSubLinks ? " animateSubLinksIn" : "")
+          }
+          id="subLinks"
+        >
           {SubLinks}
         </nav>
       )}
