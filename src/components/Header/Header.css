@@ -72,6 +72,15 @@ nav {
   margin-left: -10px;
 }
 
+#chevron-menue {
+  flex: 1;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
 #login {
   background: black;
   box-shadow: none;

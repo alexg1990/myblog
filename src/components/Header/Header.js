@@ -94,16 +94,7 @@ const MainLinks = props => {
 
   if (isMobile()) {
     return (
-      <div
-        style={{
-          flex: 1,
-          height: "100%",
-          alignItems: "center",
-          display: "flex",
-          justifyContent: "center"
-        }}
-        onClick={props.handleClick}
-      >
+      <div id="chevron-menue" onClick={props.handleClick}>
         <FontAwesomeIcon
           icon={props.showSubLinks ? faChevronDown : faChevronUp}
         />
