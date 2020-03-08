@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 import { setScrollDirection } from "../../state/actions";
 import isMobile from "../../helpers/isMobile.js";
@@ -15,6 +15,7 @@ class Header extends React.Component {
   constructor() {
     super();
     this.state = {
+      showSubLinks: false,
       shouldAnimate: false
     };
   }
@@ -39,37 +40,50 @@ class Header extends React.Component {
       return "";
     }
   };
+  handleClick = () => {
+    this.setState({ showSubLinks: !this.state.showSubLinks });
+  };
   render() {
     const Links = [
-      // <Link to="/" id="logo">
-      //   <img src={logo} alt="logo" />
-      // </Link>,
       <Link to="/javascript">Javascript</Link>,
       <Link to="/react">React</Link>,
       <Link to="/typescript">Typescript</Link>
-      // <Button variant="contained" id="login">
-      //   Login
-      // </Button>
     ];
+    const subLinks = [];
+    if (isMobile()) {
+      for (let i = 0; i < Links.length; i++) {
+        subLinks.push(Links[i]);
+        if (i < Links.length - 1) {
+          subLinks.push(<hr />);
+        }
+      }
+    }
     const pageTitle = document.title;
     return (
-      <header className={"container" + this.handleAnimation()}>
-        <nav className="container">
+      <header className={this.handleAnimation()}>
+        <nav className="navContainer" id="mainLinks">
           <Link to="/" id="logo">
             <img src={logo} alt="logo" />
           </Link>
           {isMobile() ? (
-            <FontAwesomeIcon icon={faChevronUp} />
+            <FontAwesomeIcon
+              icon={this.state.showSubLinks ? faChevronDown : faChevronUp}
+              onClick={this.handleClick}
+            />
           ) : this.props.scrollDirection === "up" ? (
             Links
           ) : (
             pageTitle
           )}
-
           <Button variant="contained" id="login">
             Login
           </Button>
         </nav>
+        {this.state.showSubLinks && (
+          <nav className="navContainer" id="subLinks">
+            {subLinks}
+          </nav>
+        )}
       </header>
     );
   }
