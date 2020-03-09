@@ -42,3 +42,15 @@ a>*:hover {
   color: #2c2c91;
   cursor: pointer;
 }
+
+.mb-0 {
+  margin-bottom: 10px;
+}
+
+.mb-1 {
+  margin-bottom: 25px;
+}
+
+.mb-2 {
+  margin-bottom: 50px;
+}
