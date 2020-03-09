@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import KeyArticlePreview from "../Articles/KeyArticlePreview/KeyArticlePreview.js";
 import ArticlePreview from "../Articles/ArticlePreview/ArticlePreview.js";
+import ArticleListItem from "../Articles/ArticleListItem/ArticleListItem.js";
 
 import "./ContentOverview.css";
 
@@ -25,7 +26,7 @@ const ContentOverview = function(props) {
   return (
     <div>
       <div style={{ padding: "0% 10%" }}>
-        <div className="masterTitleContainer">
+        <div className="masterTitleContainer mb-2">
           <h1 className="masterTitle">
             {masterTitle}
             {masterTitle.length !== props.masterTitle.length && (
@@ -33,13 +34,18 @@ const ContentOverview = function(props) {
             )}
           </h1>
         </div>
-        <KeyArticlePreview
-          title={props.exampleTitle}
-          description={props.exampleDescription}
-        />
-        <div className="articlePreviewFlexContainer">
+        <div className="mb-2">
+          <KeyArticlePreview
+            title={props.keyTitle}
+            description={props.keyDescription}
+          />
+        </div>
+        <div className="articlePreviewFlexContainer mb-2">
           <ArticlePreview />
           <ArticlePreview />
+        </div>
+        <div>
+          <ArticleListItem />
         </div>
       </div>
     </div>
@@ -47,6 +53,9 @@ const ContentOverview = function(props) {
 };
 
 ContentOverview.defaultProps = {
-  masterTitle: "Writing about my journey"
+  pageTitle: "Alex's Blog",
+  masterTitle: "Writing about my journey",
+  keyTitle: "General Overview",
+  keyDescription: "Lorem ipsum…"
 };
 export default ContentOverview;

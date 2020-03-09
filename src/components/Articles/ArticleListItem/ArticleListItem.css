@@ -1,0 +1,21 @@
+.articleListItemPreviewContainer {
+    display: flex;
+    margin: 0px -10px;
+}
+
+.articleListItemPreviewContainer>* {
+    padding: 0px 10px;
+}
+
+.articleListItemImageContainer {
+    flex: 0.3;
+}
+
+.articleListItemImage {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.articleListItemInfo {
+    flex: 1;
+}

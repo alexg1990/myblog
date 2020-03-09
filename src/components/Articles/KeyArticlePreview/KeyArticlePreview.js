@@ -2,8 +2,10 @@ import React from "react";
 
 import "./KeyArticlePreview.css";
 import MockImage from "../../../assets/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg";
+import stringShortener from "../../../helpers/stringShortener.js";
 
 const KeyArticlePreview = function(props) {
+  let description = stringShortener(props.description, 300);
   return (
     <div className="articleContainer">
       <div className="keyArticleImageContainer">
@@ -11,7 +13,7 @@ const KeyArticlePreview = function(props) {
       </div>
       <div className="keyArticleInfo">
         <h2>{props.title}</h2>
-        <p>{props.description}</p>
+        <p>{description}</p>
       </div>
     </div>
   );

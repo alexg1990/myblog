@@ -2,13 +2,15 @@ import React from "react";
 
 import "./ArticlePreview.css";
 import MockImage from "../../../assets/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg";
+import stringShortener from "../../../helpers/stringShortener.js";
 
 const ArticlePreview = function(props) {
+  let description = stringShortener(props.description, 300);
   return (
     <div className="articlePreviewContainer">
       <div>
         <h3>{props.title}</h3>
-        <p>{props.description}</p>
+        <p>{description}</p>
       </div>
       <div>
         <img className="articleImage" src={MockImage} alt=""></img>
