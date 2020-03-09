@@ -6,14 +6,15 @@ import ContentOverview from "../ContentOverview/ContentOverview";
 
 const Routes = function(props) {
   let headerHeight =
-    document.getElementsByTagName("nav")[0] &&
-    document.getElementsByTagName("nav")[0].clientHeight;
+    document.getElementsByTagName("header")[0] &&
+    document.getElementsByTagName("header")[0].clientHeight;
+  let headerDist = 70;
   return (
     <div
       style={
         props.prevOffset <= 70
-          ? { marginTop: "80px" }
-          : { marginTop: "" + (80 + headerHeight) + "px" }
+          ? { marginTop: headerDist }
+          : { marginTop: "" + (headerDist + headerHeight) + "px" }
       }
     >
       <Switch>

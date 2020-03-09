@@ -12,7 +12,9 @@ const ArticlePreview = function(props) {
         <h3>{props.title}</h3>
         <p>{description}</p>
       </div>
-      <img className="articleImage" src={MockImage}></img>
+      <div>
+        <img className="articleImage" src={MockImage} alt=""></img>
+      </div>
     </div>
   );
 };
