@@ -52,7 +52,7 @@ const Header = props => {
 
   let SubLinks;
   if (isMobile()) {
-    SubLinks = addBreaksBetweenElements(Links);
+    SubLinks = addBreaksBetweenElements(Links, false);
   }
 
   return (

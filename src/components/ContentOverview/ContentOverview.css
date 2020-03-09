@@ -17,8 +17,22 @@
   padding: 0px 20px;
 }
 
+.articleListContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0% 5%;
+}
+
+.articleListContainer>div {
+  margin-top: 15px;
+}
+
 @media screen and (max-width: 768px) {
   .articlePreviewFlexContainer {
     flex-direction: column;
+  }
+
+  .articleListContainer {
+    padding: 0% 0%;
   }
 }

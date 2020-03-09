@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+
 import KeyArticlePreview from "../Articles/KeyArticlePreview/KeyArticlePreview.js";
 import ArticlePreview from "../Articles/ArticlePreview/ArticlePreview.js";
 import ArticleListItem from "../Articles/ArticleListItem/ArticleListItem.js";
+
+import addBreaksBetweenElements from "../../helpers/addBreaksBetweenElements.js";
 
 import "./ContentOverview.css";
 
@@ -23,6 +26,11 @@ const ContentOverview = function(props) {
       setTimeout(() => setMasterTitle(title.substr(0, i + 1)), i * 100);
     }
   }
+  let articleList = addBreaksBetweenElements([
+    <ArticleListItem />,
+    <ArticleListItem />,
+    <ArticleListItem />
+  ]);
   return (
     <div>
       <div style={{ padding: "0% 10%" }}>
@@ -44,9 +52,7 @@ const ContentOverview = function(props) {
           <ArticlePreview />
           <ArticlePreview />
         </div>
-        <div>
-          <ArticleListItem />
-        </div>
+        <div className="articleListContainer">{articleList}</div>
       </div>
     </div>
   );

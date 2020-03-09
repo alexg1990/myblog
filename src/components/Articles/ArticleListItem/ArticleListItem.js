@@ -2,6 +2,7 @@ import React from "react";
 
 import "./ArticleListItem.css";
 import stringShortener from "../../../helpers/stringShortener.js";
+import isMobile from "../../../helpers/isMobile.js";
 
 import MockImage from "../../../assets/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg";
 
@@ -14,9 +15,11 @@ const ArticleListItem = props => {
   }
   return (
     <div className="articleListItemPreviewContainer">
-      <div className="articleListItemImageContainer">
-        <img className="articleListItemImage" src={MockImage} />
-      </div>
+      {!isMobile() && (
+        <div className="articleListItemImageContainer">
+          <img className="articleListItemImage" src={MockImage} />
+        </div>
+      )}
       <div className="articleListItemInfo">
         <h3>{title}</h3>
         <p>{description}</p>
