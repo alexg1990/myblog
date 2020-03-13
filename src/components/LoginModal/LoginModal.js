@@ -4,6 +4,9 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+
+import PasswordInput from "../Inputs/Password/Password.js";
 
 import "./LoginModal.css";
 
@@ -11,7 +14,8 @@ const useStyles = makeStyles(theme => ({
   modal: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    borderRadius: "3px"
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
@@ -53,10 +57,16 @@ export default function TransitionsModal() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">Transition modal</h2>
-            <p id="transition-modal-description">
-              react-transition-group animates me.
-            </p>
+            <h2 style={{ textAlign: "center" }}>Login</h2>
+            <p>Verify your credentials to start managing the articles.</p>
+            <TextField
+              id="outlined-helperText"
+              label="Email"
+              helperText="Please enter your email"
+              variant="outlined"
+              style={{ width: "100%" }}
+            />
+            <PasswordInput style={{ width: "100%" }} />
           </div>
         </Fade>
       </Modal>
