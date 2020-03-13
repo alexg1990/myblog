@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+import TransitionsModal from "../LoginModal/LoginModal.js";
+
 import Button from "@material-ui/core/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -65,7 +67,7 @@ const Header = props => {
           Links={Links}
           scrollDirection={props.scrollDirection}
         />
-        <LoginButton />
+        <TransitionsModal />
       </nav>
       {showSubLinks && (
         <nav
@@ -105,14 +107,6 @@ const MainLinks = props => {
   } else {
     return pageTitle;
   }
-};
-
-const LoginButton = () => {
-  return (
-    <Button variant="contained" id="login">
-      Login
-    </Button>
-  );
 };
 
 const mapStateToProps = state => {

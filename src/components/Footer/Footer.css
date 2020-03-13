@@ -1,0 +1,21 @@
+#footer {
+  display: flex;
+  height: 150px;
+  align-items: center;
+}
+
+#footer > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0% 10%;
+  height: 20px;
+}
+
+#contact {
+  display: flex;
+  justify-content: space-between;
+  width: 33%;
+  font-size: 30px;
+}

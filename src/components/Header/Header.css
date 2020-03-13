@@ -81,15 +81,6 @@ nav {
   cursor: pointer;
 }
 
-#login {
-  background: black;
-  box-shadow: none;
-}
-
-#login > * {
-  color: white;
-}
-
 @keyframes animateSubLinksIn {
   from {
     transform: translateY(-10%);

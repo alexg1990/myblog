@@ -6,6 +6,7 @@ import { store } from "../../state/store";
 
 import Header from "../Header/Header";
 import Routes from "./Routes";
+import Footer from "../Footer/Footer.js";
 
 import "./App.css";
 
@@ -15,8 +16,9 @@ function App() {
       <Router>
         <Header />
         <Routes />
-        <div style={{ height: "4000px", background: "white" }}></div>
       </Router>
+      <hr style={{ marginTop: "120px" }} />
+      <Footer />
     </Provider>
   );
 }
