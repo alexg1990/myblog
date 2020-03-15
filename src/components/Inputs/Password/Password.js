@@ -46,7 +46,7 @@ export default function InputAdornments() {
 
   return (
     <div className={classes.root}>
-      <div style={{ width: "100%" }}>
+      <div style={{ width: "100%", marginTop: "20px" }}>
         <FormControl
           className={clsx(classes.margin, classes.textField)}
           variant="outlined"

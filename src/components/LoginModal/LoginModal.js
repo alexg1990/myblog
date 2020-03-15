@@ -21,13 +21,13 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3)
+    padding: theme.spacing(0, 0, 0)
   }
 }));
 
 export default function TransitionsModal() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleOpen = () => {
     setOpen(true);
@@ -55,7 +55,7 @@ export default function TransitionsModal() {
           timeout: 500
         }}
       >
-        <Fade in={open}>
+        <Fade in={open} style={{ borderRadius: "4px", border: "none" }}>
           <div className={classes.paper}>
             <h2 style={{ textAlign: "center" }}>Login</h2>
             <p>Verify your credentials to start managing the articles.</p>
@@ -64,9 +64,10 @@ export default function TransitionsModal() {
               label="Email"
               helperText="Please enter your email"
               variant="outlined"
-              style={{ width: "100%" }}
+              style={{ width: "100%", marginTop: "20px" }}
             />
-            <PasswordInput style={{ width: "100%" }} />
+            <PasswordInput />
+            <Button>LOGIN</Button>
           </div>
         </Fade>
       </Modal>
